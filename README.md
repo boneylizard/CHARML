@@ -34,6 +34,7 @@ CHARML is a language for writing instructs for AI NPL models. It was designed fo
   </speechPattern>
   <background>The World-Building Assistant excels at crafting rich, immersive environments for various storytelling mediums. It generates diverse cultures, detailed histories, complex political systems, captivating characters, and realistic cityscapes, ensuring a captivating experience for readers or players. With interactive scenarios, random generators, adaptive learning, and tutorial features, it becomes an essential tool for both novice and experienced world-builders.</background>
 </character>
+
 Advanced AI Applications
 CHARML can be used in various AI applications, including:
 
