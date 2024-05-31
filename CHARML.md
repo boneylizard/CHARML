@@ -1,127 +1,149 @@
+#### Example `CHARML.md`:
+```markdown
 # CHARML (Character Markup Language)
 
-## Key Features
-- **Tag-Based Structure:** Similar to HTML/XML, providing clarity and ease of parsing.
-- **Concise Syntax:** Keeps the text readable and easy to parse.
-- **Mixed Content:** Combines structured data with natural language descriptions for flexibility.
-- **Unlimited Capacity:** CHARML can be expanded to include any elements like hobbies, priorities, world lore triggers, etc.
+## Introduction
+CHARML is a powerful and flexible markup language designed for creating and managing character profiles and world-building elements in interactive storytelling and AI applications. It combines structured data with natural language descriptions, offering clarity and ease of use.
 
-## Example CHARML Code
-```xml
+## Syntax and Structure
+CHARML uses a tag-based structure similar to HTML/XML. Each tag defines a specific aspect of the character or world element.
+
+### Basic Structure
+
 <character>
-  <name>World-Building Assistant</name>
-  <description>A tool designed to create immersive and intricate worlds for fiction and games, with interactive scenarios, random generators, adaptive learning, and tutorial features.</description>
-  <traits>
-    Cultural Generator, Historical Developer, Political Systems Creator, Geographical Detailing, Immersive Worlds, Flexibility, Creativity, Efficiency, Expanding Cast of Characters, Interesting Locations in Cities, Realistic City Details, Interactive Scenarios, Random Generators, Adaptive Learning, Tutorial Features
-  </traits>
-  <speechPattern>
-    informal: false
-    slang: false
-    examples:
-      - Generate a unique culture for my world.
-      - Create a historical event that shapes the world's politics.
-      - Develop a complex political system for a specific region.
-      - Describe a geographical feature in detail.
-      - Add a diverse cast of characters to my story.
-      - Suggest interesting locations within a city.
-      - Provide realistic details to make a city feel alive.
-      - How can I make my world more immersive?
-      - Your world's political system is intriguing. Have you considered the impact on its economy?
-  </speechPattern>
-  <background>The World-Building Assistant excels at crafting rich, immersive environments for various storytelling mediums. It generates diverse cultures, detailed histories, complex political systems, captivating characters, and realistic cityscapes, ensuring a captivating experience for readers or players. With interactive scenarios, random generators, adaptive learning, and tutorial features, it becomes an essential tool for both novice and experienced world-builders.</background>
+  <name>Character Name</name>
+  <description>Brief description of the character.</description>
+  <!-- Additional tags and elements -->
 </character>
+Tags and Attributes
+<character>
+Defines a character profile.
 
+Attributes: None
+Example:
+xml
+Copy code
+<character>
+  <name>John Doe</name>
+  <description>A brave warrior from the ancient lands.</description>
+  <!-- Additional tags and elements -->
+</character>
+<name>
+Specifies the name of the character.
 
-## Natural Language Processing (NLP) Models
-Enhanced Training Data: Structured training data for improved model performance.
-Consistent Annotations: Facilitates better model training and evaluation.
-## Conversational AI
-Dialogue Management: Manages dialogue states and responses.
-User Personalization: Provides personalized experiences.
-## Knowledge Representation and Reasoning
-Structured Knowledge Bases: Represents complex knowledge structures.
-## Semantic Understanding: Enhances semantic understanding.
-Content Generation
-Automated Writing: Defines templates and guidelines for consistency.
-## Creative Applications: Helps in structuring narratives and character arcs.
-Data Integration and Interoperability
-Standardized Format: Serves as a standardized format for data exchange.
-## API Development: Defines clear and consistent communication protocols.
-Machine Learning and Data Science
-## Feature Engineering: Documents and manages feature engineering processes.
-Model Documentation: Provides clear and structured model information.
-## World Lore and Action Triggers
-CHARML includes features to trigger world lore elements based on user actions. 
+Attributes: None
+Example:
+xml
+Copy code
+<name>John Doe</name>
+<description>
+Provides a brief description of the character.
 
-Example World Lore
+Attributes: None
+Example:
+xml
+Copy code
+<description>A brave warrior from the ancient lands.</description>
+<traits>
+Lists the traits of the character.
 
+Attributes: None
+Example:
+xml
+Copy code
+<traits>
+  Brave, Strong, Loyal
+</traits>
+<speechPattern>
+Defines the speech pattern of the character.
+
+Attributes:
+informal: Specifies if the speech is informal. (true/false)
+slang: Specifies if slang is used. (true/false)
+Example:
+xml
+Copy code
+<speechPattern>
+  informal: false
+  slang: false
+  examples:
+    - "How can I assist you today?"
+    - "It is a pleasure to meet you."
+</speechPattern>
 <worldLore>
-  <purpose>Add depth and richness to the roleplay by integrating world lore values.</purpose>
-  <keys>
-    <key>mentor's guidance</key>
-    <value>A wise elder</value>
-    <description>Provides guidance and wisdom to the character.</description>
-    <key>conflict event</key>
-    <value>A significant event</value>
-    <description>Shapes the character's development.</description>
-  </keys>
-  <actionTriggers>
-    <trigger>mention of war</trigger>
-    <action>Introduce conflict event related to the character's backstory.</action>
-    <trigger>request for advice</trigger>
-    <action>Introduce mentor's guidance to provide insights.</action>
-  </actionTriggers>
-  <worldLoreTokenLimit>350 tokens</worldLoreTokenLimit>
-</worldLore>
+Defines the world lore elements.
 
+Attributes: None
+Example:
+xml
+Copy code
+<worldLore>
+  <entry>
+    <key>mentor's guidance</key>
+    <description>A wise elder provides guidance and wisdom to the character.</description>
+    <trigger>user requests advice</trigger>
+    <action>Introduce "mentor's guidance" into the dialogue, emphasizing the wisdom provided.</action>
+    <exampleResponse>"The mentor's words echoed in the young hero's mind, offering clarity and direction."</exampleResponse>
+  </entry>
+  <entry>
+    <key>conflict event</key>
+    <description>A significant event shapes the character's development.</description>
+    <trigger>mention of war</trigger>
+    <action>Introduce "conflict event" into the dialogue, highlighting its impact on the characters.</action>
+    <exampleResponse>"The war had left deep scars on the land and its people, a reminder of the price of conflict."</exampleResponse>
+  </entry>
+</worldLore>
+<forceUsage>
+Defines the specific lore to be integrated based on triggers.
+
+Attributes: None
+Example:
+xml
+Copy code
 <forceUsage>
   <entry>
-    <key>prophecy</key>
-    <description>An ancient prophecy about a hero destined to save the kingdom.</description>
-    <trigger>user mentions a hero</trigger>
-    <action>Introduce "prophecy" into dialogue, emphasizing the chosen one's role.</action>
-    <exampleResponse>"Legend speaks of a hero who will rise to defeat the darkness. Could that be you?"</exampleResponse>
+    <key>mentor's guidance</key>
+    <description>A wise elder</description>
+    <trigger>user requests advice</trigger>
+    <action>Introduce "mentor's guidance" into the dialogue, emphasizing the wisdom provided.</action>
+    <exampleResponse>"The mentor's words echoed in the young hero's mind, offering clarity and direction."</exampleResponse>
   </entry>
-
   <entry>
-    <key>artifact</key>
-    <description>A powerful artifact lost to time, said to grant immense power to its wielder.</description>
-    <trigger>user finds a mysterious object</trigger>
-    <action>Introduce "artifact" into dialogue, highlighting its potential power.</action>
-    <exampleResponse>"This artifact could be the key to unlocking untold power. But beware, it may also come with a great cost."</exampleResponse>
-  </entry>
-
-  <entry>
-    <key>founding event</key>
-    <description>The city of Arcadia was founded 500 years ago by explorers seeking new lands.</description>
-    <trigger>user inquires about history</trigger>
-    <action>Introduce "founding event" into dialogue, describing the significance of this event in the city's history.</action>
-    <exampleResponse>"Arcadia's founding was a beacon of hope for many. It marked the beginning of a new era."</exampleResponse>
-  </entry>
-
-  <entry>
-    <key>cultural tradition</key>
-    <description>Annual festival of lights celebrating the end of the long winter.</description>
-    <trigger>user mentions celebration</trigger>
-    <action>Introduce "cultural tradition" into dialogue, explaining the festival's significance and customs.</action>
-    <exampleResponse>"The festival of lights is a time of joy and reflection, marking the end of the harsh winter and the beginning of spring."</exampleResponse>
+    <key>conflict event</key>
+    <description>A significant event</description>
+    <trigger>mention of war</trigger>
+    <action>Introduce "conflict event" into the dialogue, highlighting its impact on the characters.</action>
+    <exampleResponse>"The war had left deep scars on the land and its people, a reminder of the price of conflict."</exampleResponse>
   </entry>
 </forceUsage>
+Best Practices
+Writing CHARML
+Use clear and concise descriptions.
+Ensure tags are properly nested.
+Keep attribute names and values consistent.
+Advanced Features
+Conditional Logic
+CHARML supports conditional logic for dynamic content.
 
-Compatibility
-CHARML was developed for Backyard.AI but is compatible with Kobold, LM Studio, and Silly Tavern, making it a versatile tool for various AI-driven platforms. Its structure and flexibility allow it to adapt to a wide range of applications in the AI field.
+Example:
+xml
+Copy code
+<character>
+  <name>Conditional Character</name>
+  <description>A character with dynamic attributes based on conditions.</description>
+  <traits>
+    <condition>
+      <if>heroic</if>
+      <then>Brave, Strong, Leader</then>
+      <else>Cunning, Deceptive, Survivor</else>
+    </condition>
+  </traits>
+</character>
+Versioning and Updates
+We use semantic versioning for CHARML. You can find the details of each release in the CHANGELOG.md file.
 
-Collaboration and Contribution
-We welcome contributions from the community! Here's how you can get started:
-
-Fork the repository: Click on the "Fork" button at the top of this repository.
-Clone your fork: git clone https://github.com/your-username/CHARML.git
-Create a branch: git checkout -b feature/your-feature-name
-Make your changes: Implement your feature or bugfix.
-Commit and push: git commit -m "Description of your changes" and git push origin feature/your-feature-name
-Create a pull request: Submit your changes for review.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Development for Multiple Platforms
+CHARML was developed for Backyard.AI but is compatible with Kobold, LM Studio, and Silly Tavern, and has potential broader applications in the AI field.
 
 Contact
 For any questions or feedback, feel free to open an issue or contact the repository maintainer.
